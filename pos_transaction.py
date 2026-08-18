@@ -12,11 +12,31 @@
 # If funds are insufficient, decline the transaction.
 # If everything is fine, approve the transaction and print a receipt.
 
+# def pos_transaction(amount, card_valid, pin_correct, sufficient_funds):
+    # if not card_valid:
+    #     return "Transaction declined: Invalid card."
+    # if not pin_correct:
+    #     return "Transaction declined: Incorrect PIN."
+    # if not sufficient_funds:
+    #     return "Transaction declined: Insufficient funds."
+    # return "Transaction approved. Printing receipt."
+
 def pos_transaction(amount, card_valid, pin_correct, sufficient_funds):
     if not card_valid:
         return "Transaction declined: Invalid card."
+    attempts = 0
+    pin_correct = False
+    while attempts < 3:
+        pin = input("Enter PIN: ")
+        attempts += 1
+        if pin == correct_pin:
+            pin_correct = True
+            break
+        print("Incorrect pin.")
+
     if not pin_correct:
-        return "Transaction declined: Incorrect PIN."
-    if not sufficient_funds:
+        return "Card blocked."
+    if amount > balance:
         return "Transaction declined: Insufficient funds."
-    return "Transaction approved. Printing receipt."
+    balance -= amount
+    return f"Transaction approved. Remaining balance: #{balance}."
