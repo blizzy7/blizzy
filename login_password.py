@@ -7,8 +7,8 @@
 
 def login(email, password):
     account = {
-        user@gmail.com: "me@gmail.com"
-        admin@gmail: "admin@gmail"
+        user@gmail.com: "me2026",
+        admin@gmail: "admin2025"
     }
     if email not in account:
         return "Account does not exist."
