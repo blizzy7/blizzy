@@ -1,9 +1,9 @@
-Receive the user's email and password.
-Look up the stored password for that email.
-If the email is not found, return "Account does not exist."
-Compare the entered password with the stored password.
-If the passwords match, return "Login successful."
-If the passwords do not match, return "Incorrect password."
+# Receive the user's email and password.
+# Look up the stored password for that email.
+# If the email is not found, return "Account does not exist."
+# Compare the entered password with the stored password.
+# If the passwords match, return "Login successful."
+# If the passwords do not match, return "Incorrect password."
 
 def login(email, password):
     account = {
